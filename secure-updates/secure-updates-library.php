@@ -94,7 +94,7 @@ if (!class_exists('Secure_Updates_Library')) {
          * @return object|false The plugin information object or false on failure.
          */
         private function fetch_latest_plugin_info() {
-            $info_endpoint = $this->mirror_host . 'wp-json/plugin-server/v1/info/' . $this->plugin_slug;
+            $info_endpoint = $this->mirror_host . 'wp-json/secure-updates-server/v1/info/' . $this->plugin_slug;
 
             $args = [
                 'timeout' => 15,
@@ -179,7 +179,7 @@ if (!class_exists('Secure_Updates_Library')) {
             }
 
             // Fetch plugin data from the secure mirror
-            $info_endpoint = $this->mirror_host . 'wp-json/plugin-server/v1/info/' . sanitize_title($this->plugin_slug);
+            $info_endpoint = $this->mirror_host . 'wp-json/secure-updates-server/v1/info/' . sanitize_title($this->plugin_slug);
 
             $request_args = [
                 'timeout' => 15,
